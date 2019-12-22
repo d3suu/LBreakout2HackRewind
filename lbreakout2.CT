@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="29">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>6</ID>
+      <Description>"points pointer"</Description>
+      <VariableType>4 Bytes</VariableType>
+      <Address>"lbreakout2.exe"+0001E724</Address>
+      <Offsets>
+        <Offset>0</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>24</ID>
+      <Description>"life pointer a"</Description>
+      <VariableType>4 Bytes</VariableType>
+      <Address>"lbreakout2.exe"+0001E724</Address>
+      <Offsets>
+        <Offset>-4</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>7</ID>
+      <Description>"life pointer"</Description>
+      <VariableType>4 Bytes</VariableType>
+      <Address>lbreakout2.exe+8EC20</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>12</ID>
+      <Description>"paddle view pointer"</Description>
+      <VariableType>4 Bytes</VariableType>
+      <Address>"lbreakout2.exe"+0006C674</Address>
+      <Offsets>
+        <Offset>20</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>16</ID>
+      <Description>"paddle physical pointer"</Description>
+      <VariableType>4 Bytes</VariableType>
+      <Address>"lbreakout2.exe"+00090FC4</Address>
+      <Offsets>
+        <Offset>128</Offset>
+        <Offset>544</Offset>
+        <Offset>5D0</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>25</ID>
+      <Description>"explosive ball"</Description>
+      <VariableType>4 Bytes</VariableType>
+      <Address>04F5B3BC</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>28</ID>
+      <Description>"pointerscan result"</Description>
+      <VariableType>4 Bytes</VariableType>
+      <Address>"lbreakout2.exe"+0006C674</Address>
+      <Offsets>
+        <Offset>-8F6C</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>26</ID>
+      <Description>"explosive ball"</Description>
+      <VariableType>4 Bytes</VariableType>
+      <Address>06B40D1C</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>27</ID>
+      <Description>"pointerscan result"</Description>
+      <VariableType>4 Bytes</VariableType>
+      <Address>"lbreakout2.exe"+00013AE0</Address>
+      <Offsets>
+        <Offset>4F8</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>29</ID>
+      <Description>"rainbow"</Description>
+      <VariableType>4 Bytes</VariableType>
+      <Address>04F643DC</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>30</ID>
+      <Description>"rainbow"</Description>
+      <VariableType>4 Bytes</VariableType>
+      <Address>0697A42C</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>31</ID>
+      <Description>"rainbow"</Description>
+      <VariableType>4 Bytes</VariableType>
+      <Address>0697A544</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>32</ID>
+      <Description>"rainbow"</Description>
+      <VariableType>4 Bytes</VariableType>
+      <Address>0697A8DC</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>33</ID>
+      <Description>"blue ball"</Description>
+      <VariableType>4 Bytes</VariableType>
+      <Address>04F5B384</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>36</ID>
+      <Description>"pointerscan result"</Description>
+      <VariableType>4 Bytes</VariableType>
+      <Address>"lbreakout2.exe"+0006C674</Address>
+      <Offsets>
+        <Offset>-8FA4</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>34</ID>
+      <Description>"blue ball"</Description>
+      <VariableType>4 Bytes</VariableType>
+      <Address>06B40CE4</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>35</ID>
+      <Description>"pointerscan result"</Description>
+      <VariableType>4 Bytes</VariableType>
+      <Address>"lbreakout2.exe"+00013AE0</Address>
+      <Offsets>
+        <Offset>4C0</Offset>
+      </Offsets>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>
