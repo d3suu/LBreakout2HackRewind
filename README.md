@@ -16,7 +16,9 @@ Download it for free, exactly this build: [portableapps.com](https://portableapp
 
 ## The problems
 ### 1. Bonus Adresses
-Turns out that bonuses don't have static addresses, and Cheat Engine cannot find pointers to them (or maybe i just don't know how to find them really).
+~~Turns out that bonuses don't have static addresses, and Cheat Engine cannot find pointers to them (or maybe i just don't know how to find them really).~~
+
+__FIXED__ - The thing is, these pointers are far away from `ImageBase` and so i had to turn up the `Maximum Offset Value` in pointer search window, to find anything. Put like `9999999` or something :v.
 ### 2. Drawing Text
 It's a bad idea to draw text like i am doing it here. Good way to do this, should be to find what library draw's text ingame (like help menu), and use direct calls to that instead.
 ### 3. Pause Screen Status
