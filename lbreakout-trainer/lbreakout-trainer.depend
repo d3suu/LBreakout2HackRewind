@@ -1,5 +1,7 @@
 # depslib dependency file v1.0
-1577030520 source:c:\users\john\desktop\lbreakout2-test\c++\lbreakout-trainer\main.cpp
+1577059609 source:c:\users\john\desktop\lbreakout2-test\c++\lbreakout-trainer\main.cpp
 	<iostream>
 	"windows.h"
+	<tlhelp32.h>
+	"psapi.h"
 

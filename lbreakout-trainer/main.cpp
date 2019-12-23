@@ -140,6 +140,42 @@ int main()
             WriteProcessMemory(phandle, (LPVOID)ScoreAddr, &status, sizeof(int), NULL);
             while(GetKeyState('N') < 0){}; // wait for release
         }
+        // Explosive ball
+        if(GetKeyState('C') < 0){
+            //cout << "EXPLOSIVE TRIGGER\n";
+            // Get the pointer value 1
+            long ExplosiveBaseAddressOne = 0x0400000+0x0008DDA0;
+            /* Self-learning part:
+             - Windows PE starts on "ImageBase" address which is hard coded in
+             - executable header. In this case, it's 0x0400000. Now we can add
+             - offsets from Cheat Engine.
+            */
+            DWORD pointA;
+            ReadProcessMemory(phandle, (LPVOID)ExplosiveBaseAddressOne, &pointA, sizeof(DWORD),0);
+            //cout << "Pointer: 0x" << hex << pointA << dec << endl;
+            //cout << "Pointer-end: 0x" << hex << pointA+0x42C4 << dec << endl;
+            int status = 0; // Read current status for explosive ball
+            ReadProcessMemory(phandle, (LPVOID)(pointA+0x42C4), &status, sizeof(int), 0);
+            // Get pointer value 2
+            long ExplosiveBaseAddressTwo = 0x0400000+0x0006C67C;
+            DWORD pointB;
+            ReadProcessMemory(phandle, (LPVOID)ExplosiveBaseAddressTwo, &pointB, sizeof(DWORD),0);
+
+            int setStatus = 0;
+            if(status == 0){
+                // enable explosive ball
+                setStatus = 1;
+            }else{
+                // disable explosive ball
+                setStatus = 0;
+            }
+
+            // Write data
+            WriteProcessMemory(phandle, (LPVOID)(pointA+0x42C4), &setStatus, sizeof(int), NULL);
+            WriteProcessMemory(phandle, (LPVOID)(pointB+0x42C4), &setStatus, sizeof(int), NULL);
+
+            while(GetKeyState('C') < 0){}; // wait for release
+        }
     }
 
 

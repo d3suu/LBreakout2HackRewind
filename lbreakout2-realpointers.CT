@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="29">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>2</ID>
+      <Description>"explosive ball"</Description>
+      <VariableType>4 Bytes</VariableType>
+      <Address>"lbreakout2.exe"+0006C67C</Address>
+      <Offsets>
+        <Offset>42C4</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>11</ID>
+      <Description>"explosive ball"</Description>
+      <VariableType>4 Bytes</VariableType>
+      <Address>"lbreakout2.exe"+0008DDA0</Address>
+      <Offsets>
+        <Offset>42C4</Offset>
+      </Offsets>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>
