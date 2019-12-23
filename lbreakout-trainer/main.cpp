@@ -65,7 +65,7 @@ int main()
         if(pauseState == true){
             // Draw text
             hackDrawText("LBreakout2 test hack by d3suu 2019", 10, 50, 0x00FFFFFF);
-            hackDrawText("Z - Rainbow! (+score from bricks)", 10, 70, 0x00FFFFFF);
+            //hackDrawText("Z - Rainbow! (+score from bricks)", 10, 70, 0x00FFFFFF);
             hackDrawText("X - Energy Balls (penetrate bricks)", 10, 90, 0x00FFFFFF);
             hackDrawText("C - Explosive Balls", 10, 110, 0x00FFFFFF);
             hackDrawText("V - Extra Life", 10, 130, 0x00FFFFFF);
@@ -85,31 +85,6 @@ int main()
             pauseState = true;
             while(GetKeyState('P') < 0){}; // wait for key release
         }
-        // Check Rainbow Key (Something is not right with adresses, it does not work for now)
-        if(GetKeyState('Z') < 0){
-            cout << "RAINBOW TRIGGER\n";
-            // Check for current Rainbow status
-            int status = 0;
-            int setStatus = 0;
-            long RainbowAddrA = 0x04F643DC;
-            long RainbowAddrB = 0x0697A42C;
-            long RainbowAddrC = 0x0697A544;
-            long RainbowAddrD = 0x0697A8DC;
-            ReadProcessMemory(phandle, (LPVOID)RainbowAddrA, &status, sizeof(int),0);
-            if(status == 0){
-                // Enable rainbow
-                setStatus = 1;
-            }else{
-                // Disable rainbow
-                setStatus = 0;
-            }
-            // Write data
-            WriteProcessMemory(phandle, (LPVOID)RainbowAddrA, &setStatus, sizeof(int), NULL);
-            WriteProcessMemory(phandle, (LPVOID)RainbowAddrB, &setStatus, sizeof(int), NULL);
-            WriteProcessMemory(phandle, (LPVOID)RainbowAddrC, &setStatus, sizeof(int), NULL);
-            WriteProcessMemory(phandle, (LPVOID)RainbowAddrD, &setStatus, sizeof(int), NULL);
-            while(GetKeyState('Z') < 0){}; // wait for release
-        }
         // Extra life
         if(GetKeyState('V') < 0){
             int status = 0;
@@ -122,12 +97,24 @@ int main()
         }
         // Maximum paddle
         if(GetKeyState('B') < 0){
-            long PaddleAddrA = 0x052EB388;
-            long PaddleAddrB = 0x047B9BE8;
+            // Find pointers
+            long PaddlePhysicalPointerBase = 0x0400000 + 0x0008FE20;
+            long PaddlePhysicalPointerSecond;
+            ReadProcessMemory(phandle, (LPVOID)PaddlePhysicalPointerBase, &PaddlePhysicalPointerSecond, sizeof(DWORD),0);
+            PaddlePhysicalPointerSecond += 0x228;
+            long PaddlePhysicalPointerFinal;
+            ReadProcessMemory(phandle, (LPVOID)PaddlePhysicalPointerSecond, &PaddlePhysicalPointerFinal, sizeof(DWORD),0);
+            PaddlePhysicalPointerFinal += 0x20; // Final pointer
+
+            long PaddleViewPointerBase = 0x0400000 + 0x0006C674;
+            long PaddleViewPointerFinal;
+            ReadProcessMemory(phandle, (LPVOID)PaddleViewPointerBase, &PaddleViewPointerFinal, sizeof(DWORD),0);
+            PaddleViewPointerFinal += 0x20; // Final pointer
+
             // Write data
-            int status = 550;
-            WriteProcessMemory(phandle, (LPVOID)PaddleAddrA, &status, sizeof(int), NULL);
-            WriteProcessMemory(phandle, (LPVOID)PaddleAddrB, &status, sizeof(int), NULL);
+            int MaxPaddleSize = 554;
+            WriteProcessMemory(phandle, (LPVOID)PaddlePhysicalPointerFinal, &MaxPaddleSize, sizeof(int), NULL);
+            WriteProcessMemory(phandle, (LPVOID)PaddleViewPointerFinal, &MaxPaddleSize, sizeof(int), NULL);
             while(GetKeyState('B') < 0){}; // wait for release
         }
         // +10k Score

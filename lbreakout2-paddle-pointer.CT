@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="29">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>0</ID>
+      <Description>"paddle physical"</Description>
+      <LastState Value="90" RealAddress="052FFDF8"/>
+      <VariableType>4 Bytes</VariableType>
+      <Address>"lbreakout2.exe"+0006C67C</Address>
+      <Offsets>
+        <Offset>20</Offset>
+        <Offset>4388</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>1</ID>
+      <Description>"paddle physical"</Description>
+      <LastState Value="90" RealAddress="052FFDF8"/>
+      <VariableType>4 Bytes</VariableType>
+      <Address>"lbreakout2.exe"+0008FE20</Address>
+      <Offsets>
+        <Offset>20</Offset>
+        <Offset>228</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>2</ID>
+      <Description>"paddle physical"</Description>
+      <LastState Value="90" RealAddress="052FFDF8"/>
+      <VariableType>4 Bytes</VariableType>
+      <Address>"lbreakout2.exe"+0008D7EC</Address>
+      <Offsets>
+        <Offset>20</Offset>
+        <Offset>310</Offset>
+        <Offset>22C4</Offset>
+      </Offsets>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>
